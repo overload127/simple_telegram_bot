@@ -7,7 +7,7 @@ get_city_russian_wikipedia - получить города с сайта
 
 save_to_txt - сохранить словарь в текстовый файл
 
-save_to_xlsx - сохранить словарь в текстовый таблицу
+save_to_xls - сохранить словарь в текстовый таблицу
 """
 
 from datetime import datetime
@@ -23,9 +23,9 @@ headers = {
       }
 
 # параметр определяет формат сохранения
-# txt | xlsx
+# txt | xls
 TXT = 'txt'
-XLSX = 'xlsx'
+XLS = 'xls'
 SAVE_TO = TXT
 
 
@@ -43,8 +43,8 @@ def main():
 
     if SAVE_TO == TXT:
         save_to_txt(all_city_list)
-    elif SAVE_TO == XLSX:
-        save_to_xlsx(all_city_list)
+    elif SAVE_TO == XLS:
+        save_to_xls(all_city_list)
     else:
         pass
 
@@ -119,9 +119,9 @@ def parse_html_city_russian_wikipedia(full_html: str, all_city_list: dict) -> No
     print(f'Parse site [wikipedia] Success! Add [{count_city}] city(s)')
 
 
-def save_to_xlsx(all_city_list: dict) -> None:
+def save_to_xls(all_city_list: dict) -> None:
     """
-    функция сохранения словаря с городами в файл xlsx (таблица)
+    функция сохранения словаря с городами в файл xls (таблица)
 
     Параметры:
 
