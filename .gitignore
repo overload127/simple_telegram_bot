@@ -110,6 +110,9 @@ ENV/
 env.bak/
 venv.bak/
 
+#visual studio code config
+.vscode/
+
 # Spyder project settings
 .spyderproject
 .spyproject
@@ -127,3 +130,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# hide my token TG bot
+security.py
