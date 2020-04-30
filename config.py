@@ -4,6 +4,7 @@
 Модуль настроек проекта
 """
 import logging
+import game_session
 
 
 PROXY = {
@@ -24,11 +25,5 @@ log_out.setFormatter(log_format)
 logger.addHandler(log_file)
 logger.addHandler(log_out)
 
-
-# logger.basicConfig(level=logging.DEBUG,
-#                   format='%(asctime)s - %(levelname)s - %(message)s',
-#                   handlers=[
-#                       logging.FileHandler('bot.log'),
-#                      logging.StreamHandler()
-#                  ]
-#                  )
+# Настрока модуля game_session
+game_session.LOAD_FROM = game_session.TXT
