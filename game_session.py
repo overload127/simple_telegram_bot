@@ -14,8 +14,7 @@ import xlrd
 # XLS - загрузка из таблицы
 TXT = 'txt'
 XLS = 'xls'
-# Определена в конце и если это главный модуль
-# LOAD_FROM = XLS
+LOAD_FROM = TXT
 
 
 class GameSession:
@@ -254,21 +253,21 @@ if __name__ == "__main__":
     LOAD_FROM = TXT
 
     def main():
-        all_game_setion = dict()
+        all_game_session = dict()
 
         if not GameSession.load_words():
             print("Проблема с загрузкой слов из файла.")
             print("Завершение программы.")
             return
         id = 123455678
-        all_game_setion[id] = GameSession()
-        print(all_game_setion[id].chat_start())
+        all_game_session[id] = GameSession()
+        print(all_game_session[id].chat_start())
         while True:
             answer = input()
             try:
-                print(all_game_setion[id].chat(answer))
+                print(all_game_session[id].chat(answer))
             except StopIteration as err:
-                all_game_setion[id] = None
+                all_game_session[id] = None
                 print(err)
                 break
 
